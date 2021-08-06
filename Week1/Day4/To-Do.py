@@ -1,5 +1,5 @@
 # To Do List
-print("Welcome, please select an option")
+print("Welcome, please select an option ಠ_ಠ")
 taskSelect = int(input("Select one of the following:\n\n1. Add a task\n\n2. Delete a task\n\n3. View all tasks\n\n Press Q to quit\n\n"))
 if taskSelect == 1:
     taskName = input("What is the name of the task?\n")
