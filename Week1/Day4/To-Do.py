@@ -12,5 +12,4 @@ def getTask(task_dict):
 
     return tasks
 items = task_dict.items()
-
-list(newTask.key())
+# Frustrating...
