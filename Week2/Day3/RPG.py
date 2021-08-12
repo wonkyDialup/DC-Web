@@ -1,42 +1,79 @@
-class Hero: 
-    def __init__(self, name, health=500, attack=50, ):
-        self.name = name
+import random
+
+def mainMenu():
+    menu = """
+    Welcome to this basic zombie fighting game
+    1. Fight the horde of zombies
+    2. Quit Game 
+    """
+    print(menu)
+
+# Character classes
+class Character:
+    def __init__(self, health):
         self.health = health
-        self.attack = attack
 
-    def items(self):
-        itemMenu = int(input("""
-        You may choose one of the following
-        1. Energy Drink (+100 Health)
-        2. Falcon Punch instruction guide (+25 attack)
-        3. Boss Key (immediate access to Boss Room *WARNING*)
-        4. Nevermind, go back
-        """))
-        print(itemMenu)
-        if itemMenu == 1 and self.health >= 250:
-            print("You aren't thirsty right now")
+class Player(Character):
+
+    def __init__(self, health=500):
+        super().__init__(health)
+
+    def attack(self, target):
+        answer = input("""
+        Choose your next action:
+
+        PUNCH
+        KICK
+        TACKLE
+    
+        """)
+        if answer.lower() in ('punch', 'kick', 'tackle'):
+            target.health -= int(random.randint(15, 150) / (random.uniform(0, 1) * target.defense))
         else:
-            self.health += 100; print("{hero.name} recovered 100 HP!")
-        if itemMenu == 2:
-            self.attack += 25; print("{hero.name} increased their attack by 25 points!!")
-        elif itemMenu == 3:
-            print('Have fun...')
-            bossBattle()
-        elif itemMenu == 4:
-            itemMenu()
+            print("you stumble...")
 
-    def viewStats(self):
-        print(f"--------------------------/nOur Hero: {self.name},\n {self.attack},\n {self.health}\n--------------------------")
-        # mainMenu()
 
-    def getDamage(self, damage):
-        self.health -= damage
-        if self.health <= 0:
-            print("You died")
-            exit()
+class Enemy(Character):
 
-name = input("What would you like to name your character? ")
-name = Hero(name, health=500, attack=50)
+    def __init__(self, name, strength, defense, health):
+        super().__init__(health)
+        self.name = name
+        self.strength = strength
+        self.defense = defense
+
+    def attack(self, target):
+        print("The {0.name} launches for an attack!".format(self))
+        target.health -= int(self.strength * random.uniform(0.1, 1.5))
+
+# Battle loop
+def battle(player, enemy):
+    print ("Oh no! A wild {0.name} appears out of nowhere!".format(enemy))
+    while player.health > 0 and enemy.health > 0:
+        player.attack(enemy)
+        print("The health of the {0.name} is now {0.health}.\n".format(enemy))
+        if enemy.health <= 0:
+           battle(Player(), random.choice(enemies)) 
+        enemy.attack(player)
+        print("Your health is now {0.health}.\n".format(player))
+    if player.health > 0:
+        print("You killed the {0.name}.\n".format(enemy))
+    elif enemy.health > 0:
+        print("The {0.name} killed you. The end!".format(enemy))
+        exit()
+
+# Enemy List and Boss details
+enemies = [Enemy("Zombie", 10, 5, 100), Enemy("Angry Zombie", 20, 10, 125), Enemy("Really Angry Zombie", 30, 20, 150), Enemy("Really Really Angry Zombie", 40, 30, 200)]
+
+# main menu
+mainMenu()
+while True:
+    choice = int(input("Choose one of the above "))
+    if choice == 1:
+        battle(Player(), random.choice(enemies))
+    if choice == 2:
+        exit()
+    else:
+        print("Choose a valid option")
 
 
 
