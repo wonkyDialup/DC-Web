@@ -46,7 +46,8 @@ def mainMenu():
     2. Quit Game 
     """
     print(menu)
-
+    
+# Player and Enemy classes
 class Player:
 
     def __init__(self, health=350):
