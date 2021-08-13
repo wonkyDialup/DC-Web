@@ -1,5 +1,6 @@
 import random
 
+# Main Menu
 def mainMenu():
     menu = """
     Welcome to Monster Deathmatch v1.0
@@ -68,11 +69,11 @@ def battle(player, enemy):
         print("The {0.name} killed you. The end!".format(enemy))
         exit()
 
-# Enemy List of Enemies
-enemies = [Enemy("Banshee",23, 15, 110), Enemy("Bone Naga", 20, 10, 125), Enemy("Chuul", 30, 20, 150), Enemy("Couatl", 40, 30, 200),
-                    Enemy("Ettin", 27, 20, 125), Enemy("Flameskull", 18, 5, 80), Enemy("Ghost", 25, 15, 90), Enemy("Lamia", 60, 21, 210)]
+# List of Enemies
+enemies = [Enemy("Banshee",23, 15, 110), Enemy("Bone Naga", 20, 10, 125), Enemy("Chuul", 30, 20, 150), Enemy("Couatl", 40, 30, 111),
+                    Enemy("Ettin", 27, 20, 125), Enemy("Flameskull", 18, 5, 80), Enemy("Ghost", 25, 15, 90), Enemy("Lamia", 60, 21, 210),
+                    Enemy("Mummy Lord", 43, 50, 85), Enemy("Iron Golem", 90, 100, 200), Enemy("Ulamog The Ceaseless Hunger", 200, 150, 300)]
 
-# main menu
 mainMenu()
 while True:
     try:
