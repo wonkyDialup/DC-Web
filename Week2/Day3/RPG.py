@@ -4,6 +4,45 @@ import random
 def mainMenu():
     menu = """
     Welcome to Monster Deathmatch v1.0
+
+…………………▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+……………▄▄█▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓█▄▄
+…………▄▀▀▓▒░░░░░░░░░░░░░░░░▒▓▓▀▄
+………▄▀▓▒▒░░░░░░░░░░░░░░░░░░░▒▒▓▀▄
+……..█▓█▒░░░░░░░░░░░░░░░░░░░░░▒▓▒▓█
+…..▌▓▀▒░░░░░░░░░░░░░░░░░░░░░░░░▒▀▓█
+…..█▌▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░▒▓█
+…▐█▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓█▌
+…█▓▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓█
+..█▐▒▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒█▓█
+…█▓█▒░░░░░░░░░░░░░░░░░░░░░░░░░░░▒█▌▓█
+..█▓▓█▒░░░░▒█▄▒▒░░░░░░░░░▒▒▄█▒░░░░▒█▓▓█
+..█▓█▒░▒▒▒▒░░▀▀█▄▄░░░░░▄▄█▀▀░░▒▒▒▒░▒█▓█
+.█▓▌▒▒▓▓▓▓▄▄▄▒▒▒▀█░░░░█▀▒▒▒▄▄▄▓▓▓▓▒▒▐▓█
+.██▌▒▓███▓█████▓▒▐▌░░▐▌▒▓████▓████▓▒▐██
+..██▒▒▓███▓▓▓████▓▄░░░▄▓████▓▓▓███▓▒▒██
+..█▓▒▒▓██████████▓▒░░░▒▓██████████▓▒▒▓█
+..█▓▒░▒▓███████▓▓▄▀░░▀▄▓▓███████▓▒░▒▓█
+….█▓▒░▒▒▓▓▓▓▄▄▄▀▒░░░░░▒▀▄▄▄▓▓▓▓▒▒░▓█
+……█▓▒░▒▒▒▒░░░░░░▒▒▒▒░░░░░░▒▒▒▒░▒▓█
+………█▓▓▒▒▒░░██░░▒▓██▓▒░░██░░▒▒▒▓▓█
+………▀██▓▓▓▒░░▀░▒▓████▓▒░▀░░▒▓▓▓██▀
+………….░▀█▓▒▒░░░▓█▓▒▒▓█▓▒░░▒▒▓█▀░
+…………█░░██▓▓▒░░▒▒▒░▒▒▒░░▒▓▓██░░█
+………….█▄░░▀█▓▒░░░░░░░░░░▒▓█▀░░▄█
+…………..█▓█░░█▓▒▒▒░░░░░▒▒▒▓█░░█▓█
+…………….█▓█░░█▀█▓▓▓▓▓▓█▀░░█░█▓█▌
+……………..█▓▓█░█░█░█▀▀▀█░█░▄▀░█▓█
+……………..█▓▓█░░▀█▀█░█░█▄█▀░░█▓▓█
+………………█▓▒▓█░░░░▀▀▀▀░░░░░█▓▓█
+………………█▓▒▒▓█░░░░ ░░░░░░░█▓▓█
+………………..█▓▒▓██▄█░░░▄░░▄██▓▒▓█
+………………..█▓▒▒▓█▒█▀█▄█▀█▒█▓▒▓█
+………………..█▓▓▒▒▓██▒▒██▒██▓▒▒▓█
+………………….█▓▓▒▒▓▀▀███▀▀▒▒▓▓█
+……………………▀█▓▓▓▓▒▒▒▒▓▓▓▓█▀
+………………………..▀▀██▓▓▓▓██▀
+
     1. Begin Battle
     2. Quit Game 
     """
@@ -26,6 +65,7 @@ class Player(Character):
         1. PUNCH
         2. KICK
         3. TACKLE
+        4. RUN AWAY
     
         """))
         try:
@@ -35,6 +75,8 @@ class Player(Character):
                 target.health -= int(random.randint(75, 150) / (random.uniform(1, 0) * target.defense))
             if answer == 3:
                 target.health -= int(random.randint(115, 200) / (random.uniform(1, 0) * target.defense))
+            if answer == 4:
+                mainMenu()
         except ValueError:
             print("Please choose option 1, 2, or 3")
             battle(Player(), random.choice(enemies))
@@ -47,7 +89,7 @@ class Enemy(Character):
         self.name = name
         self.strength = strength
         self.defense = defense
-
+        
     def attack(self, target):
         print("The {0.name} launches for an attack!".format(self))
         target.health -= int(self.strength * random.uniform(0.1, 1.5))
@@ -67,6 +109,10 @@ def battle(player, enemy):
         battle(Player(), random.choice(enemies))
     elif enemy.health > 0:
         print("The {0.name} killed you. The end!".format(enemy))
+        print("""
+        Writer, Producer, Director, Programmer:
+        -------------Justin Gibbs--------------
+        """)
         exit()
 
 # List of Enemies
@@ -81,6 +127,10 @@ while True:
         if choice == 1:
             battle(Player(), random.choice(enemies))
         if choice == 2:
+            print("""
+        Writer, Producer, Director, Programmer:
+        -------------Justin Gibbs--------------
+        """)
             exit()
     except ValueError:
         print("Choose a valid option")
