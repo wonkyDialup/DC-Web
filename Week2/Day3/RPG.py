@@ -94,6 +94,15 @@ class Enemy(Character):
 
 # Battle loop
 def battle(player, enemy):
+    print("Get ready!")
+    time.sleep(2)
+    print("3")
+    time.sleep(1)
+    print("2")
+    time.sleep(1)
+    print("1")
+    time.sleep(1)
+    print("They're coming...")
     print ("Oh no! A wild {0.name} appears out of nowhere!".format(enemy))
     while player.health > 0 and enemy.health > 0:
         player.attack(enemy)
