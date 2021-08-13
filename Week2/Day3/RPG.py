@@ -55,7 +55,7 @@ class Character:
 
 class Player(Character):
 
-    def __init__(self, health=500):
+    def __init__(self, health=350):
         super().__init__(health)
 
     def attack(self, target):
@@ -65,7 +65,6 @@ class Player(Character):
         1. PUNCH
         2. KICK
         3. TACKLE
-        4. RUN AWAY
     
         """))
         try:
@@ -75,8 +74,6 @@ class Player(Character):
                 target.health -= int(random.randint(75, 150) / (random.uniform(1, 0) * target.defense))
             if answer == 3:
                 target.health -= int(random.randint(115, 200) / (random.uniform(1, 0) * target.defense))
-            if answer == 4:
-                mainMenu()
         except ValueError:
             print("Please choose option 1, 2, or 3")
             battle(Player(), random.choice(enemies))
@@ -89,7 +86,7 @@ class Enemy(Character):
         self.name = name
         self.strength = strength
         self.defense = defense
-        
+
     def attack(self, target):
         print("The {0.name} launches for an attack!".format(self))
         target.health -= int(self.strength * random.uniform(0.1, 1.5))
@@ -99,16 +96,16 @@ def battle(player, enemy):
     print ("Oh no! A wild {0.name} appears out of nowhere!".format(enemy))
     while player.health > 0 and enemy.health > 0:
         player.attack(enemy)
-        print("The health of the {0.name} is now {0.health}.\n".format(enemy))
+        print("After that attack, {0.name} has their HP reduced to {0.health}.\n".format(enemy))
         if enemy.health <= 0:
            battle(Player(), random.choice(enemies)) 
         enemy.attack(player)
-        print("Your health is now {0.health}.\n".format(player))
+        print("Ouch! Your health is now {0.health}.\n".format(player))
     if player.health > 0:
-        print("You killed the {0.name}.\n".format(enemy))
+        print("You have vanquished {0.name}.\n".format(enemy))
         battle(Player(), random.choice(enemies))
     elif enemy.health > 0:
-        print("The {0.name} killed you. The end!".format(enemy))
+        print("You fought hard, but the {0.name} killed you. The end!".format(enemy))
         print("""
         Writer, Producer, Director, Programmer:
         -------------Justin Gibbs--------------
