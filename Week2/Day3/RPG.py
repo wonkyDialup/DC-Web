@@ -5,7 +5,6 @@ import time
 def mainMenu():
     menu = """
     Welcome to Monster Deathmatch v1.0
-
 …………………▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 ……………▄▄█▓▓▓▒▒▒▒▒▒▒▒▒▒▓▓▓▓█▄▄
 …………▄▀▀▓▒░░░░░░░░░░░░░░░░▒▓▓▀▄
@@ -43,26 +42,19 @@ def mainMenu():
 ………………….█▓▓▒▒▓▀▀███▀▀▒▒▓▓█
 ……………………▀█▓▓▓▓▒▒▒▒▓▓▓▓█▀
 ………………………..▀▀██▓▓▓▓██▀
-
     1. Begin Battle
     2. Quit Game 
     """
     print(menu)
 
-# Character classes
-class Character:
-    def __init__(self, health):
-        self.health = health
-
-class Player(Character):
+class Player:
 
     def __init__(self, health=350):
-        super().__init__(health)
+        self.health = health
 
     def attack(self, target):
         answer = int(input("""
         Choose your next action:
-
         1. PUNCH
         2. KICK
         3. TACKLE
@@ -80,10 +72,10 @@ class Player(Character):
             battle(Player(), random.choice(enemies))
 
 
-class Enemy(Character):
+class Enemy:
 
     def __init__(self, name, strength, defense, health):
-        super().__init__(health)
+        self.health = health
         self.name = name
         self.strength = strength
         self.defense = defense
@@ -150,6 +142,7 @@ while True:
         exit()
     except ValueError:
         print("Choose a valid option")
+
 
 
 
