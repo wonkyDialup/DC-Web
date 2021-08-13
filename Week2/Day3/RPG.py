@@ -2,8 +2,8 @@ import random
 
 def mainMenu():
     menu = """
-    Welcome to this basic zombie fighting game
-    1. Fight the horde of zombies
+    Welcome to Monster Deathmatch v1.0
+    1. Begin Battle
     2. Quit Game 
     """
     print(menu)
@@ -19,18 +19,24 @@ class Player(Character):
         super().__init__(health)
 
     def attack(self, target):
-        answer = input("""
+        answer = int(input("""
         Choose your next action:
 
-        PUNCH
-        KICK
-        TACKLE
+        1. PUNCH
+        2. KICK
+        3. TACKLE
     
-        """)
-        if answer.lower() in ('punch', 'kick', 'tackle'):
-            target.health -= int(random.randint(15, 150) / (random.uniform(0, 1) * target.defense))
-        else:
-            print("you stumble...")
+        """))
+        try:
+            if answer == 1: 
+                target.health -= int(random.randint(50, 100) / (random.uniform(1, 0) * target.defense))
+            if answer == 2:
+                target.health -= int(random.randint(75, 150) / (random.uniform(1, 0) * target.defense))
+            if answer == 3:
+                target.health -= int(random.randint(115, 200) / (random.uniform(1, 0) * target.defense))
+        except ValueError:
+            print("Please choose option 1, 2, or 3")
+            battle(Player(), random.choice(enemies))
 
 
 class Enemy(Character):
@@ -57,22 +63,25 @@ def battle(player, enemy):
         print("Your health is now {0.health}.\n".format(player))
     if player.health > 0:
         print("You killed the {0.name}.\n".format(enemy))
+        battle(Player(), random.choice(enemies))
     elif enemy.health > 0:
         print("The {0.name} killed you. The end!".format(enemy))
         exit()
 
-# Enemy List and Boss details
-enemies = [Enemy("Zombie", 10, 5, 100), Enemy("Angry Zombie", 20, 10, 125), Enemy("Really Angry Zombie", 30, 20, 150), Enemy("Really Really Angry Zombie", 40, 30, 200)]
+# Enemy List of Enemies
+enemies = [Enemy("Banshee",23, 15, 110), Enemy("Bone Naga", 20, 10, 125), Enemy("Chuul", 30, 20, 150), Enemy("Couatl", 40, 30, 200),
+                    Enemy("Ettin", 27, 20, 125), Enemy("Flameskull", 18, 5, 80), Enemy("Ghost", 25, 15, 90), Enemy("Lamia", 60, 21, 210)]
 
 # main menu
 mainMenu()
 while True:
-    choice = int(input("Choose one of the above "))
-    if choice == 1:
-        battle(Player(), random.choice(enemies))
-    if choice == 2:
-        exit()
-    else:
+    try:
+        choice = int(input("Choose one of the above "))
+        if choice == 1:
+            battle(Player(), random.choice(enemies))
+        if choice == 2:
+            exit()
+    except:
         print("Choose a valid option")
 
 
