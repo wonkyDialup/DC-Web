@@ -82,7 +82,7 @@ while True:
             battle(Player(), random.choice(enemies))
         if choice == 2:
             exit()
-    except:
+    except ValueError:
         print("Choose a valid option")
 
 
