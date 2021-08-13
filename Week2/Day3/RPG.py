@@ -1,4 +1,5 @@
 import random
+import time
 
 # Main Menu
 def mainMenu():
@@ -96,20 +97,26 @@ def battle(player, enemy):
     print ("Oh no! A wild {0.name} appears out of nowhere!".format(enemy))
     while player.health > 0 and enemy.health > 0:
         player.attack(enemy)
+        time.sleep(2)
         print("After that attack, {0.name} has their HP reduced to {0.health}.\n".format(enemy))
         if enemy.health <= 0:
            battle(Player(), random.choice(enemies)) 
         enemy.attack(player)
+        time.sleep(2)
         print("Ouch! Your health is now {0.health}.\n".format(player))
     if player.health > 0:
+        time.sleep(1)
         print("You have vanquished {0.name}.\n".format(enemy))
         battle(Player(), random.choice(enemies))
     elif enemy.health > 0:
+        time.sleep(2)
         print("You fought hard, but the {0.name} killed you. The end!".format(enemy))
+        time.sleep(2)
         print("""
         Writer, Producer, Director, Programmer:
         -------------Justin Gibbs--------------
         """)
+        time.sleep(3)
         exit()
 
 # List of Enemies
@@ -128,7 +135,8 @@ while True:
         Writer, Producer, Director, Programmer:
         -------------Justin Gibbs--------------
         """)
-            exit()
+        time.sleep(2)
+        exit()
     except ValueError:
         print("Choose a valid option")
 
