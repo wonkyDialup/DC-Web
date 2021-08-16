@@ -1,21 +1,26 @@
 .vertical-menu {
-    width: 200px; /* Set a width if you like */
+    width: 200px;
   }
   
   .vertical-menu a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
+    background-color: #eee; 
+    color: black; 
+    display: block;
+    padding: 12px;
+    text-decoration: none;
   }
   
   .vertical-menu a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
+    background-color: #ccc;
   }
   
   .vertical-menu a.active {
-    background-color: #150794; /* Add a green color to the "active/current" link */
+    background-color: #150794;
     color: white;
   }
   h1 { font-family: 'Tourney', cursive; }
+
+.photos {
+    height:500px ;
+    width: 350px ;
+}
