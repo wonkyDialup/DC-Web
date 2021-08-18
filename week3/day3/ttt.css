@@ -1,0 +1,15 @@
+.ticTac {
+    height: 150px;
+    width: 150px;
+    border: 3px solid black;
+    display: grid;
+    grid-template-areas:
+    "space space space"
+    "space space space"
+    "space space space";
+  grid-template-columns: (3, 50px);
+  grid-template-rows: (3, 50px);
+}
+.space {
+    grid-area: space;
+}

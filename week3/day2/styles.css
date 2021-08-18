@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu {
+    background-color: blueviolet;
+    height: 100%;
+    width: 20%;
+    right: 0%;
+}
+.header {
+    background-color: blue;
+    padding: 100px;
+    position: top;
+}
+.content {
+    background-color: darkgreen;
+    padding: 150px;
+    position: center;
+}
+.footer {
+    background-color: darkcyan;
+    display: flex;
+    padding: 100px;
+    position: bottom;
+}
+.ad {
+    background-color: darkorange;
+    padding: 50px;
+    position: right;
+}
+

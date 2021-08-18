@@ -1,0 +1,18 @@
+.red-box {
+    height: 30px;
+    width: 30px;
+    background-color: red;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .flex {
+    border: 2px solid pink;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .grid {
+    display: grid;
+    border: 2px solid violet;
+    margin: 5px;
+    border-radius: 5px;
+  }

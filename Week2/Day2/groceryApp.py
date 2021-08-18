@@ -2,7 +2,10 @@ list_groceries = {}
 class Groceries:
     def __init__(self, store, item):
         self.store = store
-        self.item = item
+        self.item = []
+
+    def __repr__(self):
+        return ("%s" % self.store)
 
     def mainMenu():
         message = """

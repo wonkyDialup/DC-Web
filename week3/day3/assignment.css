@@ -4,6 +4,10 @@ body {
 }
 
 /* Changed text color of header */
+.header {
+    display: grid;
+    justify-content: center;
+}
 h1 {
     font-size: 500%;
     color: #444444
