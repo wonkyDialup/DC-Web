@@ -3,18 +3,10 @@ body {
     background: linear-gradient(to right, #e0eafc, #cfdef3);
 }
 
-/* Added a header and changed text color */
-.header {
-    justify-content: center;
-}
-
+/* Changed text color of header */
 h1 {
     font-size: 500%;
     color: #444444
-}
-
-.image {
-    border-radius: 10px;
 }
 
 /* Grid layout */
