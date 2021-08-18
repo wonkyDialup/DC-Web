@@ -1,0 +1,25 @@
+.gallery {
+    size: 100vw;
+    display: grid;
+    grid-template-columns: repeat(4, 98%);
+    grid-template-rows: auto;
+    gap: 10px;
+    align-items: stretch;
+    list-style: none;
+}
+img {
+    border-radius: 10px;
+}
+@media only screen and (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(2, 98%);
+        grid-template-rows: auto;
+    }
+    
+}
+@media only screen and (max-width: 640px) {
+    .gallery {
+        grid-template-columns: repeat(1, 98%);
+        grid-template-rows: auto;
+    }
+}
