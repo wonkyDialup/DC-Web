@@ -27,6 +27,9 @@ img:hover {
     transition: 400ms;
     transition-duration: 400ms;
 }
+img {
+    border-radius: 5px;
+}
 
 .searchGroup {
     display: flex;
