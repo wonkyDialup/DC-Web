@@ -1,3 +1,8 @@
-#navbarDropdown-2 {
-    margin-left: 10em; important
+#mainNav {
+    margin-left:10em;
+}
+#footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
