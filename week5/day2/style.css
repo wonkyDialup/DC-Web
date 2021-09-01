@@ -6,3 +6,30 @@
     align-items: center;
     justify-content: center;
 }
+#gridContainer {
+    display: grid;
+}
+.main {
+    /* background-color:aquamarine; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    margin-right: 40em;
+    height: 85vh;
+    width: 95vw;
+    text-align: center;
+    
+}
+.news {
+    box-sizing: border-box;
+    
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    height: auto;
+    width: 200px;
+}
