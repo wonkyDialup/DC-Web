@@ -1,16 +1,18 @@
-
 const mainContainer = document.querySelector(".main");
-const searchButton = document.querySelector(".searchButton");
+const searchButton = document.querySelector("div.searchGroup button[type='button']");
 
 searchButton.addEventListener("click", retrieve);
 
 function retrieve(e) {
-
+  mainContainer.innerHTML = "";
     e.preventDefault();
 
     const apiKey = `9be4f18efc3a4da7b6442b920a280bf2`
-    let topic = document.querySelector('.searchBox').value;
+    let topic = document.querySelector("div.searchGroup input[type='search']").value;
     let url = `https://newsapi.org/v2/everything?qInTitle=${topic}&apiKey=${apiKey}`
+    
+    
+    
 
     fetch(url).then((res)=>{
         return res.json()
@@ -20,43 +22,22 @@ function retrieve(e) {
             const newsDiv = document.createElement("div");
             newsDiv.className = "news";
             const image = document.createElement("img");
-            // const newsTitle = document.createElement("h4");
             const source = document.createElement("a");
             source.setAttribute('href', article.url );
             source.setAttribute('target', '_blank')
             source.textContent = article.title;
             image.src = article.urlToImage;
-            // newsTitle.innerText = article.Title;
             newsDiv.append(source, image);
             mainContainer.append(newsDiv);
         })
     })
 
+  
      console.log(topic)
-
-}
+    }
 searchButton.addEventListener("click", () => retrieve());
 
-// fetch("https://newsapi.org/v2/everything?domains=techcrunch.com&apiKey=9be4f18efc3a4da7b6442b920a280bf2")
-//    .then(response => response.json())
-//    .then(articles => showArticles(articles.results));
 
-//    showArticles = article => {
-//     const mainContainer = document.querySelector(".main");
-//     article.forEach(article => {
-//       const newsDiv = document.createElement("div");
-//       newsDiv.className = "news";
-//       const image = document.createElement("img");
-//       console.table(showArticles());
-//       const newsTitle = document.createElement("h4");
-//     //   newsElement.innerText = `${articles.title}`;
-//       poster.src = article.urlToImage;
-//       NewsTitle.innerText = article.Title;
-//       newsDiv.append(newsTitle, image);
-//       mainContainer.append(newsDiv);
-//     //   newsDiv.append(newsElement);
-//     });
-//   }
 
 function initMap() {
     var latlng = new google.maps.LatLng(34.075375, -84.294090);
