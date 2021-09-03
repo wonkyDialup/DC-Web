@@ -52,10 +52,6 @@ function retrieve(e) {
   
      console.log(topic)
     }
-    // $(".news").click(function() {
-    //   window.location = $(this).find("a").attr("href"); 
-    //   return false;
-    // });
 searchButton.addEventListener("click", () => retrieve());
 
 
