@@ -1,11 +1,11 @@
 const mainContainer = document.querySelector(".main");
 const searchButton = document.querySelector("div.searchGroup button[type='button']");
 
-searchButton.addEventListener("click", retrieve);
+
 
 function retrieve(e) {
   mainContainer.innerHTML = "";
-    e.preventDefault();
+    // e.preventDefault();
 
     const apiKey = `9be4f18efc3a4da7b6442b920a280bf2`
     let topic = document.querySelector("div.searchGroup input[type='search']").value;
@@ -21,13 +21,30 @@ function retrieve(e) {
         data.articles.forEach(article =>{
             const newsDiv = document.createElement("div");
             newsDiv.className = "news";
+            const figure = document.createElement("figure");
+            figure.className = "figure";
+            const text = document.createElement("figcaption");
+            text.className = "caption";
             const image = document.createElement("img");
-            const source = document.createElement("a");
-            source.setAttribute('href', article.url );
-            source.setAttribute('target', '_blank')
-            source.textContent = article.title;
+            image.className = "image";
+            const title = document.createElement("h3");
+            title.classname = "title";
+            const button = document.createElement("a");
+            button.classname = "button";
+            button.InnerText = "Read More";
+            const preview = document.createElement("p")
+            preview.className = "snippet";
+            newsDiv.setAttribute('href', article.url );
+            image.setAttribute('href', article.url );
+            button.setAttribute('href', article.url );
+            title.setAttribute('href', article.url );
+            title.setAttribute('target', '_blank');
+            title.textContent = article.title;
+            preview.textContent = article.description;
             image.src = article.urlToImage;
-            newsDiv.append(source, image);
+            text.append(title, preview, button);
+            figure.append(text, image)
+            newsDiv.append(figure);
             mainContainer.append(newsDiv);
         })
     })
@@ -35,6 +52,10 @@ function retrieve(e) {
   
      console.log(topic)
     }
+    // $(".news").click(function() {
+    //   window.location = $(this).find("a").attr("href"); 
+    //   return false;
+    // });
 searchButton.addEventListener("click", () => retrieve());
 
 
