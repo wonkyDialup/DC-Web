@@ -30,7 +30,7 @@ function retrieve(e) {
             const title = document.createElement("h3");
             title.classname = "title";
             const button = document.createElement("a");
-            button.classname = "button";
+            button.setAttribute('id', "button" );
             button.InnerText = "Read More";
             const preview = document.createElement("p")
             preview.className = "snippet";
@@ -38,13 +38,13 @@ function retrieve(e) {
             image.setAttribute('href', article.url );
             button.setAttribute('href', article.url );
             title.setAttribute('href', article.url );
-            title.setAttribute('target', '_blank');
+            button.setAttribute('target', '_blank');
             title.textContent = article.title;
             preview.textContent = article.description;
             image.src = article.urlToImage;
-            text.append(title, preview, button);
+            text.append(title, preview);
             figure.append(text, image)
-            newsDiv.append(figure);
+            newsDiv.append(figure, button);
             mainContainer.append(newsDiv);
         })
     })

@@ -1,4 +1,17 @@
-
+#navArea {
+  display: flex;
+  flex-wrap: wrap;
+}
+#button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* background-color: aqua;
+  color: red;
+  width: 500px;
+  height: 500px; */
+}
 
 
 #mainNav {
@@ -6,6 +19,7 @@
 }
 .searchGroup{
     display: flex;
+    margin-left: 10em;
 }
 #footer {
     display: flex;
@@ -171,7 +185,7 @@ img {
       margin: 60px 0;
     }
   }
-  .button {
+  #button {
     display: block;
     padding: 10px 20px;
     color: white;
@@ -182,7 +196,7 @@ img {
     text-decoration: none;
     transition: 0.3s;
   }
-  .button:hover {
+  #button:hover {
     color: black;
     background-color: white;
   }
