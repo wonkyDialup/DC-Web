@@ -1,0 +1,51 @@
+.main {
+    display: grid;
+    height: 80em;
+    width: 140em;
+    
+    grid-template-areas: 
+    "space space space clothes clothes clothes clothes space space space"
+    /* "space clothes clothes clothes clothes clothes clothes clothes space"
+    "space hair hair hair skin skin eyes skin space space space"
+    "space hair skin hair skin skin skin eyes skin skin skin space"
+    "space hair skin hair hair skin skin skin eyes skin skin skin"
+    " space hair hair skin skin skin skin eyes eyes eyes eyes space"
+    "space skin skin skin skin skin skin skin skin"
+    "space clothes clothes blue clothes clothes clothes space space space space space"
+    "clothes clothes clothes blue clothes clothes blue clothes clothes space"
+    "clothes clothes clothes clothes blue blue blue blue clothes clothes clothes clothes"
+    "skin skin clothes blue yellow blue blue yellow blue clothes skin skin"
+    "skin skin skin blue blue blue blue blue skin skin skin"
+    "skin skin blue blue blue blue blue blue blue skin skin"
+    "space space blue blue blue space space blue blue blue space space"
+    "space hair hair hair space space space space hair hair hair space"
+    "hair hair hair hair space space space space hair hair hair hair" */
+}
+.space {
+    grid-area: space;
+    background-color: white;
+}
+.clothes {
+    grid-area : clothes;
+    background-color: red;
+}
+.skin {
+    grid-area: skin;
+    background-color: blanchedalmond;
+}
+.hair {
+    grid-area: hair;
+    background-color: brown;
+}
+.eyes {
+    grid-area: eyes;
+    background-color: black;
+}
+.blue {
+    grid-area: blue;
+    background-color: blue;
+}
+.yellow {
+    grid-area: yellow;
+    background-color: yellow;
+}

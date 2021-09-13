@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">Basic To-Do List Maker</h1>
+        <br/><br/>
+        <div class="row">
+            <form class="formTask">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                      <i>Add your task here:</i>
+                    </span>
+                    <input type="text" class="form-control"
+                           placeholder="Wash the car..." 
+                           id="taskInput" style="width: 30vw" />
+                </div>
+                <div class="inputButton">
+                    <input type="button"
+                           class="btn btn-primary form-control" 
+                           value="Add New Task" style="width: 10vw"
+                           onclick="add_item()" />
+                </div>
+            </form>
+        </div>
+        <div class="tasks">
+            <ul id="list_tasks">
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

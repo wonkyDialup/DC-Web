@@ -1,5 +1,5 @@
 const apiKey = "8c7e30ae";
-const apiSite = `http://www.omdbapi.com/?apikey=${apiKey}`;
+const apiSite = `https://www.omdbapi.com/?apikey=${apiKey}`;
 const mainContainer = document.querySelector(".main");
 const searchButton = document.querySelector(".searchButton");
 
@@ -23,3 +23,15 @@ async function searchMovie() {
     }
 }
 searchButton.addEventListener("click", () => searchMovie());
+var input = document.getElementById("searchBox");
+  input.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("myBtn").click();
+      }
+  });
+searchButton.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+      searchMovie();
+    }
+});

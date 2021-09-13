@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+header {
+    display: flex;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100em;
+    min-height: 100em;
+    width: 100vw;
+    height: 100em;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    width: 100%;
+    height: 40vh;
+    margin-top: 20em;
+    /* margin-left: 20em; */
+    position: relative;  
+    display: grid;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 2;
+    align-items: center;
+  }
+  h1 {
+      display: flex;
+      justify-self: center;
+      font-size: 45px;
+      width: 100vw;
+      /* margin-left: 31em; */
+      color:rgb(227, 229, 231)
+  }
+  input {
+      width:100vw;
+      /* margin-left: 65em; */
+      margin-bottom: 10em;
+  }
+  .overlay {
+      height: 80%;
+      width: 100%;
+  }
+  .form-outline {
+    /* margin-left: 30em; */
+    width: 100vw;
+    position: relative;
+    display: flex;
+  }
+
+  button {
+    width: 75px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  .searchCity {
+    width: 70%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+  }
+  .main {
+      display: flex;
+      flex-direction: column;
+      /* margin-left: 95em; */
+      color:rgb(227, 229, 231);
+      width: 100vw;
+      height: 40vh;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  
+  /* Media Query for devices withi coarse pointers and no hover functionality */
+  
+  /* This will use a fallback image instead of a video for devices that commonly do not support the HTML5 video element */
+  
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
+    }
+  
+    header video {
+      display: none;
+    }
+  }

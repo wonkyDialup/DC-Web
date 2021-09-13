@@ -1,0 +1,44 @@
+
+* {
+    padding: 0;
+    margin: 0em;
+    box-sizing: border-box;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, A;
+  }
+    
+  body {
+    margin-top: 10em;
+    margin-right: 20em;
+    background: #b6b6b6;
+    overflow: auto;
+  }
+    
+  h1{
+     justify-content: center;
+     margin-left: 50%;
+     font-size: 3rem;
+     text-decoration: underline;
+  }
+
+  .formTask{
+      margin-left: 20em;
+  }
+  .inputButton{
+      margin-left: 24em;
+  }
+    
+  ul {
+    margin-left: 15em;
+    text-align: left;
+    padding-left: 45em;
+    padding: 7%;
+    font-size: 2rem;
+    list-style: circle dotted;
+  }
+    
+  li:hover{
+    color:rgb(255, 0, 0);
+    transition: 400ms ease;
+    cursor: pointer;
+  }
+   

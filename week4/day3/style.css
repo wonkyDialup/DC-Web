@@ -1,0 +1,15 @@
+h1 {
+    color: red;
+  }
+
+.jokes {
+    height: 50em;
+    width: 50em;
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  height: 80vh;
+  width: 97vw;
+  text-align: center;
+}
