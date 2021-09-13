@@ -1,7 +1,8 @@
 .mainContainer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 400%;
+    width: 100%;
 }

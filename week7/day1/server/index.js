@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const PORT = 3009;
+const creds = require("/.db");
 
 //  middleware
 app.use(express.json());

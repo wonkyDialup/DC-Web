@@ -1,5 +1,7 @@
 const sendTodo = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    const todo = document.querySelector(".todo-name").value;
+    console.log(todo);
     console.log("To do is sent")
 };
 
