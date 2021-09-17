@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+    <title>To Do List</title>
+</head>
+<body>
+    <h1 class="header">To Do List</h1>
+    <input class="taskName" type="text" placeholder="Enter your task">
+    <input class="urgency" type="text" placeholder="Urgency">
+    <input class="assignee" type="text" placeholder="Who is assigning this task?">
+    <input class="submit" type="submit" value="Submit Task">
+    <div class="list">
+        <ol class="todos"></ol>
+    </div>
+    <div class="update">
+        <input type="number" class="taskID">
+        <input type="text" class="updateTask" placeholder="Update the task name">
+        <input type="text" class="urgencyUpdate" placeholder="Update the urgency">
+        <input type="text" class="assigneeNew" placeholder="Who is assigning this?">
+        <button class="updateButton">Update Task</button>
+    </div>
+    <div class="delete">
+        <input type="text" class="taskDelete" placeholder="Number of the task to delete">
+        <button class="deleteButton">Delete this task</button>
+    </div>
+</body>
+<script src="todoList.js"></script>
+</html>
