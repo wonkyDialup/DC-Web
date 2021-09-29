@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    text-align: center;
+    text-transform: capitalize;
+    width: 9em;
+    color: black;
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0726fbdd-a6a6-4871-bed6-e8e0b9ce2af0/db50a4r-87e59f37-c422-44c4-8082-2a7574101bde.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzA3MjZmYmRkLWE2YTYtNDg3MS1iZWQ2LWU4ZTBiOWNlMmFmMFwvZGI1MGE0ci04N2U1OWYzNy1jNDIyLTQ0YzQtODA4Mi0yYTc1NzQxMDFiZGUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.rETgXturw_dHZ-bgI9Y-OsjvZBnivy3AGI_RMLlPpjg);
+    background-size: cover;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  button {
+    background-color: darkgreen;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    font-size: 12px;
+  }
