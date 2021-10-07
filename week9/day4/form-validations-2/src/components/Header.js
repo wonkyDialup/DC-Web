@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector} from "react-redux";
 import {
   UserButton,
   HeaderItem,
@@ -8,12 +9,15 @@ import {
 
 const URL = "https://randomuser.me/api/";
 
+
 export default function Header(props) {
   const viewSidebar = props.viewSidebar;
   const setViewSidebar = props.setViewSidebar;
-  const [user, setUser] = useState({});
   const [counter, setCounter] = useState(0);
-
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.userData);
+  // useEffect is a hook
+  // hook that fires when the component is mounted
   useEffect(() => {
     const getNewsData = async () => {
       const getTheNews = await fetch(URL, {
@@ -25,20 +29,24 @@ export default function Header(props) {
         },
       });
       const jsonNews = await getTheNews.json();
-      console.log(jsonNews);
-      setUser({
-        ...jsonNews.results[0],
-        userImage: jsonNews?.results[0]?.picture?.thumbnail,
+
+      dispatch({
+        type: "GET_USERS",
+        payload: { ...jsonNews.results[0] },
       });
     };
+
     getNewsData();
-    return () => {};
-  }, [counter]);
+    return () => { };
+  },
+    [counter]
+  );
 
-
+  // const dispatch = useDispatch()
 
   return (
     <HeaderContainer>
+      {/* <button onClick={() => dispatch({ type: "SET_FOOD", payload: ['PF Chang', 'KFC', 'Kani', 'Wild Wing', 'Salad'] })}>Dispatch Action</button> */}
       <UserButton onClick={() => setViewSidebar(!viewSidebar)}>
         {viewSidebar ? "Hide Sidebar" : "Show Sidebar"}
       </UserButton>
@@ -51,9 +59,8 @@ export default function Header(props) {
       <HeaderItem>
         <p>
           Welcome {user?.name?.first} {""} {user?.name?.last}
-        </p>
+        </p> 
       </HeaderItem>
-
       <HeaderItem>
         <UserPicture src={user?.picture?.large} alt="" />
       </HeaderItem>

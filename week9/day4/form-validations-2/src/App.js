@@ -1,7 +1,7 @@
 import Login from "./components/Login";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import Home from "./components/Home";
+// import Home from "./components/Home";
 import ErrorPage from "./components/ErrorPage";
 import Dashboard from "./components/Dashboard";
 import { MainContainer } from "./styled-components/AppStyle";
@@ -10,7 +10,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
+  // Redirect,
 } from "react-router-dom";
 import { useState } from "react";
 import Garage from "./components/Garage";
