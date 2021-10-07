@@ -8,12 +8,14 @@ align-items: center;
 gap: 20px;
 width: 50vw auto;
 height: 100vh auto;
-
+`
+export const Title = styled.h1`
+font-family: 'Raleway', sans-serif;
 `
 
 export const Charts = styled.div`
-height: 35vh auto;
-width: 35vw auto;
+height: 30vh;
+width: 30vh;
 padding-bottom: 5vw auto;
 `
 

@@ -1,12 +1,12 @@
 import React from "react";
-import { DashboardContainer, Work, Charts } from "../styled-components/DashboardStyle";
+import { DashboardContainer, Work, Charts, Title } from "../styled-components/DashboardStyle";
 import Chart from "./Charts";
 import WorkOrders from "./WorkOrders";
 
 export default function Dashboard() {
   return (
     <DashboardContainer>
-      <h1>Dashboard</h1>
+      <Title>Dashboard</Title>
       <Charts>
         <Chart />
       </Charts>  
