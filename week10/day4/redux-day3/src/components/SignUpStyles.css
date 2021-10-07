@@ -1,0 +1,23 @@
+form {
+    display: flex;
+    flex-direction: column;
+  }
+  .signupform {
+    width: 400px;
+    margin-top: 40px;
+  }
+  .icon {
+    animation: spin 2s linear infinite;
+  
+    /* display: inline-block; */
+    /* position: absolute; */
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
