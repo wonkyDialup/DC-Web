@@ -39,7 +39,7 @@ export default function Header(props) {
     getNewsData();
     return () => { };
   },
-    [counter]
+    [counter, dispatch]
   );
 
   // const dispatch = useDispatch()

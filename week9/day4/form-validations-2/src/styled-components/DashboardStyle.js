@@ -3,15 +3,17 @@ import styled from "styled-components";
 export const DashboardContainer = styled.div`
 display: flex;
 flex-flow: column wrap;
-justify-content: space-around;
+justify-content: center;
 align-items: center;
 gap: 20px;
-width: 50vw auto;
+width: 100vw;
 height: 100vh auto;
 `
 export const Title = styled.h1`
 font-family: 'Raleway', sans-serif;
 `
+
+
 
 export const Charts = styled.div`
 height: 30vh;

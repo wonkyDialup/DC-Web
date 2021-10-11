@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import {FormContainer, Input, InputBtn, FormInput, Header} from "../styled-components/FormStyle";
+import {FormContainer, Input, InputBtn, FormInput, Header, MainContainer, Links} from "../styled-components/FormStyle";
 
 export default function Form() {
   const [formData, setFormData] = useState({});
 
   return (
+  <MainContainer>
     <FormContainer>
       <Header>Please Log In to Continue!</Header>
       <FormInput>
@@ -35,13 +36,15 @@ export default function Form() {
           name="password"
           value={formData?.password}
         />
-        <FormContainer>
+        {/* <FormContainer> */}
           <InputBtn type="submit" />
-        </FormContainer>
-        <br />
-        <p>Forgot Password?</p>
-        <p>New User? Sign Up!</p>
+        {/* </FormContainer> */}
+          <br />
+        <Links href="">Forgot Password?</Links>
+        <p>New User? <Links href="">Sign Up!</Links></p>
       </FormInput>
-    </FormContainer>
+      </FormContainer>
+    </MainContainer>
+    
   );
 }

@@ -1,15 +1,18 @@
 import styled from "styled-components";
 
-
+export const MainContainer = styled.div`
+grid-area: formcontainer;
+width: 100vw;
+`
 export const FormContainer = styled.div`
-  grid-area: formcontainer;
+  display: flex;
+  flex-flow: column wrap;
   background: rgb(34,193,195);
   background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
   font-family: "Roboto", sans-serif;
-  max-width: 500px;
-  min-width: 300px;
-  max-height: 700px;
-  width: 30%;
+  width: 40vw;
+  justify-content: center;
+  align-items: center;
   height: 60%;
   margin: 100px auto;
   border:1px solid #111;
@@ -25,17 +28,26 @@ text-align: center;
   margin: 0;
   font-size: 2rem;
 `
+export const Links = styled.a`
+font-family: 'Raleway', sans-serif;
+color: black;
+text-decoration: none;
+transition: opacity 0.25s ease-out;
+  &:hover {
+    opacity: 0.8;
+  }
+`
 
 export const FormInput = styled.form`
 display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
-  max-width: 100%;
+  max-width: 40%;
 `
 
 export const Input = styled.input`
-width: 80%;
+width: 100%;
 box-sizing: border-box;
 border: none;
 font-size: 1.3rem;
@@ -63,8 +75,9 @@ transition: box-shadow 0.2s ease-in;
 export const InputBtn = styled.input`
 border-radius: 25px;
 width: 80%;
+align-text: center;
 height: 40px;
-padding-left: 4.0rem;
+
 font-size: 1.3rem;
 color: white;
 font-weight: 700;
