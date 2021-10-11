@@ -5,13 +5,13 @@ import debounce from "lodash.debounce";
 import { useSelector } from "react-redux";
 import { createUserFromLogin } from "./DatabaseFunctions";
 import { FaSpinner } from "react-icons/fa";
-import { IconContext } from "react-icons";
+// import { IconContext } from "react-icons";
 
 export default function SignUpForm() {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
   const user = useSelector((state) => state);
-  // this delays the dispatch function for 300 milliseconds
+  const counter = useSelector((state) => state.Counter)
   const debouncedChangeHandler = useMemo(() => {
     return debounce(dispatch, 500);
   }, [dispatch]);
@@ -71,7 +71,11 @@ export default function SignUpForm() {
             onClick={(e) => createUserFromLogin(e, user, setLoading)}
           />
         )}
+        {counter}
       </form>
+      
+        <button onClick={() => dispatch({type:"INCREMENT_COUNTER"})}>Increment</button>
+        <button onClick={() => dispatch({type:"DECREMENT_COUNTER"})}>Decrement</button>
     </div>
   );
 }
