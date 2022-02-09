@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    background-color: #5b7c99;
+    font-family: 'Inconsolata', monospace;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.error {
+    font-size: 300px;
+}
+.name {
+    font-size: 100px;
+    color: #ffffff;
+
+}

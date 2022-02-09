@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MainContainer = styled.div`
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   display: grid;
   grid-template-areas:
